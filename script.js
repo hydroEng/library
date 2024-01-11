@@ -28,3 +28,10 @@ Book.prototype.updateLibrary = function () {
 
 let myBook = new Book('LOTR', "Tolkien", 69, false)
 myBook.updateLibrary()
+
+const showModal = document.getElementById("showModal")
+const modal = document.getElementById("modal")
+
+showModal.addEventListener("click", () => {
+  modal.showModal()
+})
