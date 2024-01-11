@@ -1,5 +1,19 @@
 const myLibrary = [];
 
+// HTML Elements.
+
+// Modals
+const showModal = document.getElementById("showModal")
+const modal = document.getElementById("modal")
+const addBook = document.getElementById("addBook")
+const form = document.getElementById("bookForm")
+
+// Form Elements
+
+const bookName = document.getElementById("name")
+const bookAuthor = document.getElementById("author")
+const bookPages = document.getElementById("pages")
+const bookRead = document.getElementById("name")
 function Book(title, author, pages, read) {
   // Constructor
   this.title = title;
@@ -8,12 +22,8 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-Book.prototype.addBookToLibraryArray = function () {
-  myLibrary.push(this);
-}
-
 Book.prototype.updateLibrary = function () {
-    this.addBookToLibraryArray()
+    myLibrary.push(this)
 
     let libraryElement = document.getElementById("library");
     libraryElement.innerHTML = '';
@@ -28,9 +38,6 @@ Book.prototype.updateLibrary = function () {
 
 let myBook = new Book('LOTR', "Tolkien", 69, false)
 myBook.updateLibrary()
-
-const showModal = document.getElementById("showModal")
-const modal = document.getElementById("modal")
 
 showModal.addEventListener("click", () => {
   modal.showModal()
